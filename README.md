@@ -21,3 +21,29 @@ A framework consisting of a lightweight Retrieval-Augmented Generation (RAG) sys
 
 ### What this repository does not contain
 - the raw benchmark results of from the thesis (due to them containing internal company data)
+
+
+### How to use:
+
+:wrench: **Configuration**
+ 1. Choose and install language and embedding models locally (see [Ollama Docs](https://docs.ollama.com/) for that)
+ 2. Install required packages (see `requirements.txt` for `rag`/`benchmark`/`eval`)
+    - Note: for benchmarking the RAG module, install both `rag/requirements.txt` and `benchmark/requirements.txt`
+ 3. Prepare Q&A samples for evaluation (use [cleaned data preparation scripts from thesis](./benchmark/data_preparation/) or define manually)
+ 4. Define a config file for the RAG module (see [example](./rag/config.example.json))
+    - Note: the sources from the example are supported from the Loader defined in the thesis (see [`loader.py`](./rag/loader.py)). You can add arbitrary data sources as long as you define your own implementation of the  [`base_loader`](./rag/interfaces/base_loader.py) interface to handle them.
+  5. Configure benchmark: specify the path to your config and to your Q&A samples in the `CONFIG` dict of the [benchmark pipeline](./benchmark/pipeline.py)
+
+:test_tube: **Start benchmark**
+
+Execute the [`pipeline.py`](./benchmark/pipeline.py) to start the benchmark
+- Note: the benchmark initializes the RAG module under test. When this is initialized and cannot find an index in the specified directory (see [config](./rag/config.example.json)) it creates one automatically.
+- Note: when finished it stores the benchmark results as a JSON file in the specified `OUTPUT_DIR` (see `CONFIG` dict of the [benchmark pipeline](./benchmark/pipeline.py))
+
+:microscope: **Evaluate results**
+
+See [`/eval/base`](./eval/base/) for basic analysis and comparison. Extend for custom analysis. Check [`eval/optimization`](./eval/optimization/) for inspiration on deeper analysis from the thesis. 
+
+:rocket: **Create!**
+
+This allows you to optimize and evaluate the RAG module iteratively. After you finished optimizing, you can integrate the RAG module to the desired target environment (e.g. backend of a Web Application, as an agent in your Multi-Agent-Environment, ...)
