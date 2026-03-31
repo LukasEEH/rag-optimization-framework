@@ -20,4 +20,4 @@ A framework consisting of a lightweight Retrieval-Augmented Generation (RAG) sys
 - the notebooks for the evaluation of the benchmark results in `/eval`
 
 ### What this repository does not contain
-- the benchmark results of from the thesis (due to them containing internal company data)
+- the raw benchmark results of from the thesis (due to them containing internal company data)

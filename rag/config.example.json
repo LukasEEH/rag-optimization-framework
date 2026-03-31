@@ -1,0 +1,28 @@
+{
+    "settings": {
+        "ollama_base_url": "http://localhost:11434",
+        "embedding_model_id": "qwen3-embedding:8b",
+        "llm_id": "gpt-oss:20b",
+        "index_dir": "/path/to/store/index"
+    },
+    "sources": [
+        {
+            "type": "files",
+            "dirs": [
+                "/any/path/to/files"
+            ]
+        },
+        {
+            "type": "websites",
+            "urls": [
+                "https://any.website.url"
+            ]
+        },
+        {
+            "type": "confluence_sites",
+            "base_url": "https://url.to.confluence",
+            "api_token": "123",
+            "space_key": "XYZ"
+        }
+    ]
+}

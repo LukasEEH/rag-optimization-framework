@@ -1,0 +1,9 @@
+notebook==7.5.0
+pandas==2.2.3
+plotly==6.5.0
+numpy==2.3.5
+scipy==1.16.3
+cohens-d-effect-size==1.2.0
+krippendorff==0.8.2
+transformers==5.2.0
+torch==2.10.0

@@ -1,0 +1,5 @@
+config.dev.json
+index/
+data/
+.venv/
+__pycache__/
