@@ -33,6 +33,7 @@ A framework consisting of a lightweight Retrieval-Augmented Generation (RAG) sys
  4. Define a config file for the RAG module (see [example](./rag/config.example.json))
     - Note: the sources from the example are supported from the Loader defined in the thesis (see [`loader.py`](./rag/loader.py)). You can add arbitrary data sources as long as you define your own implementation of the  [`base_loader`](./rag/interfaces/base_loader.py) interface to handle them.
   5. Configure benchmark: specify the path to your config and to your Q&A samples in the `CONFIG` dict of the [benchmark pipeline](./benchmark/pipeline.py)
+  6. Customize metrics: Add or remove metrics in the [`metrics_provider`](./benchmark/metrics_provider.py). Use metrics from [Ragas](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/) or define your own (see [custom metrics](./benchmark/custom_metrics) for custom Judge-LLMs)
 
 :test_tube: **Start benchmark**
 
