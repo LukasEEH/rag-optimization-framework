@@ -48,3 +48,6 @@ See [`/eval/base`](./eval/base/) for basic analysis and comparison. Extend for c
 :rocket: **Optimize & Create!**
 
 This allows you to optimize and evaluate the RAG module iteratively. After you finished optimizing, you can integrate the RAG module to the desired target environment (e.g. backend of a Web Application, as an agent in your Multi-Agent-Environment, ...)
+
+I recommend using the following scheme for the iterative optimization:
+![iteration scheme](schema.png)
