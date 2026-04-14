@@ -24,7 +24,7 @@ from ragas.llms import BaseRagasLLM
 import metrics_provider
 
 import sys
-sys.path.insert(1, '../rag')
+sys.path.insert(1, '../baseline/rag')
 from rag import RAG
 
 
